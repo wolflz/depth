@@ -1,5 +1,6 @@
 package no.agens.depth;
 
+import no.agens.depth.library.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
