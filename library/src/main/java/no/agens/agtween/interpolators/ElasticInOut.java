@@ -34,7 +34,8 @@ public class ElasticInOut
     if ((!this.setA) || (f1 < 1.0F)) {
       f1 = 1.0F;
     }
-    for (float f4 = f2 / 4.0F; f3 < 1.0F; f4 = f2 / 6.2831855F * (float)Math.asin(1.0F / f1))
+    float f4 = f2 / 4.0F;
+    for (; f3 < 1.0F; f4 = f2 / 6.2831855F * (float)Math.asin(1.0F / f1))
     {
       float f6 = f3 - 1.0F;
       return -0.5F * (f1 * (float)Math.pow(2.0D, 10.0F * f6) * (float)Math.sin(6.2831855F * (f6 - f4) / f2));

@@ -17,6 +17,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.view.Window;
+import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import no.agens.agtween.interpolators.ExpoIn;
@@ -47,7 +48,6 @@ public class RootActivity
     for (;;)
     {
       localViewGroup.setBackground(getResources().getDrawable(paramInt3, null));
-      return;
       if (paramInt4 == 3)
       {
         int i = (int)getResources().getDimension(2131165274);
@@ -72,10 +72,8 @@ public class RootActivity
     localObjectAnimator.start();
   }
   
-  private View.OnClickListener getMenuItemCLick(final int paramInt1, final int paramInt2)
-  {
-    new View.OnClickListener()
-    {
+  private View.OnClickListener getMenuItemCLick(final int paramInt1, final int paramInt2) {
+    return new View.OnClickListener() {
       public void onClick(View paramAnonymousView)
       {
         if (paramInt1 == RootActivity.this.curretMenuIndex) {
@@ -83,7 +81,6 @@ public class RootActivity
         }
         do
         {
-          return;
           if ((paramInt1 == 0) && (!(RootActivity.this.currentFragment instanceof WaterFragment)))
           {
             ((MenuAnimation)RootActivity.this.currentFragment).exitFromMenu();
@@ -127,23 +124,16 @@ public class RootActivity
     fadeColoTo(paramInt, (TextView)paramView.findViewById(2131492994));
   }
   
-  private void selectMenuItem(int paramInt1, int paramInt2)
-  {
-    int i = 0;
-    if (i < this.menu.getChildCount())
-    {
-      View localView = this.menu.getChildAt(i);
-      if (i == paramInt1) {
-        select(localView, paramInt2);
+  private void selectMenuItem(int paramInt1, int paramInt2) {
+      for (int i = 0; i < this.menu.getChildCount(); i++) {
+          View localView = this.menu.getChildAt(i);
+          if (i == paramInt1) {
+              select(localView, paramInt2);
+          } else {
+              unSelect(localView);
+          }
       }
-      for (;;)
-      {
-        i++;
-        break;
-        unSelect(localView);
-      }
-    }
-    this.curretMenuIndex = paramInt1;
+      this.curretMenuIndex = paramInt1;
   }
   
   private void setupMenu()

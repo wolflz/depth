@@ -1,5 +1,6 @@
 package no.agens.agtween;
 
+import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
@@ -147,13 +148,10 @@ public class ReboundObjectAnimator
   
   public void removeUpdateListener(ValueAnimator.AnimatorUpdateListener paramAnimatorUpdateListener)
   {
-    if (this.updateListeners == null) {}
-    do
-    {
-      return;
-      this.updateListeners.remove(paramAnimatorUpdateListener);
-    } while (this.updateListeners.size() != 0);
-    this.updateListeners = null;
+    if (this.updateListeners != null) {
+        this.updateListeners.remove(paramAnimatorUpdateListener);
+    }
+    if (this.updateListeners.size() == 0) this.updateListeners = null;
   }
   
   public ReboundObjectAnimator setFriction(double paramDouble)
@@ -195,36 +193,34 @@ public class ReboundObjectAnimator
       {
         ReboundObjectAnimator.this.fraction = ((float)paramAnonymousSpring.getCurrentValue());
         ReboundObjectAnimator.this.currentAnimatedValue = (ReboundObjectAnimator.this.from + ReboundObjectAnimator.this.fraction * f);
-        if (ReboundObjectAnimator.this.propertyMethod != null) {}
+        if (ReboundObjectAnimator.this.propertyMethod != null) {
+            if (ReboundObjectAnimator.this.property != null) {
+                ReboundObjectAnimator.this.property.set((View)ReboundObjectAnimator.this.target, Float.valueOf(ReboundObjectAnimator.this.currentAnimatedValue));
+            }
+        }
         for (;;)
         {
-          try
-          {
-            Method localMethod = ReboundObjectAnimator.this.propertyMethod;
-            Object localObject = ReboundObjectAnimator.this.target;
-            Object[] arrayOfObject = new Object[1];
-            arrayOfObject[0] = Float.valueOf(ReboundObjectAnimator.this.currentAnimatedValue);
-            localMethod.invoke(localObject, arrayOfObject);
-            Iterator localIterator = ReboundObjectAnimator.this.updateListeners.iterator();
-            if (!localIterator.hasNext()) {
-              break;
+            try
+            {
+                Method localMethod = ReboundObjectAnimator.this.propertyMethod;
+                Object localObject = ReboundObjectAnimator.this.target;
+                Object[] arrayOfObject = new Object[1];
+                arrayOfObject[0] = Float.valueOf(ReboundObjectAnimator.this.currentAnimatedValue);
+                localMethod.invoke(localObject, arrayOfObject);
+                Iterator localIterator = ReboundObjectAnimator.this.updateListeners.iterator();
+                if (!localIterator.hasNext()) {
+                    break;
+                }
+                ((ValueAnimator.AnimatorUpdateListener)localIterator.next()).onAnimationUpdate(ReboundObjectAnimator.this);
+                continue;
             }
-            ((ValueAnimator.AnimatorUpdateListener)localIterator.next()).onAnimationUpdate(ReboundObjectAnimator.this);
-            continue;
-          }
-          catch (IllegalAccessException localIllegalAccessException)
-          {
-            localIllegalAccessException.printStackTrace();
-            continue;
-          }
-          catch (InvocationTargetException localInvocationTargetException)
-          {
-            localInvocationTargetException.printStackTrace();
-            continue;
-          }
-          if (ReboundObjectAnimator.this.property != null) {
-            ReboundObjectAnimator.this.property.set((View)ReboundObjectAnimator.this.target, Float.valueOf(ReboundObjectAnimator.this.currentAnimatedValue));
-          }
+            catch (IllegalAccessException localIllegalAccessException) {
+                localIllegalAccessException.printStackTrace();
+                continue;
+            } catch (InvocationTargetException localInvocationTargetException) {
+                localInvocationTargetException.printStackTrace();
+                continue;
+            }
         }
       }
     });
