@@ -31,7 +31,7 @@ public class PlayGroundActivity
   
   private void setupDepthSeekbar()
   {
-    SeekBar localSeekBar = (SeekBar)findViewById(2131492972);
+    SeekBar localSeekBar = (SeekBar)findViewById(R.id.depth_seekbar);
     WindFragment.setProgressBarColor(localSeekBar, this.seekbarColor);
     localSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
     {
@@ -49,7 +49,7 @@ public class PlayGroundActivity
   
   private void setupElevationSeekbar()
   {
-    SeekBar localSeekBar = (SeekBar)findViewById(2131492973);
+    SeekBar localSeekBar = (SeekBar)findViewById(R.id.elevation_seekbar);
     localSeekBar.setProgress(0);
     WindFragment.setProgressBarColor(localSeekBar, this.seekbarColor);
     localSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
@@ -68,7 +68,7 @@ public class PlayGroundActivity
   
   private void setupMenuButton()
   {
-    ImageView localImageView = (ImageView)findViewById(2131492970);
+    ImageView localImageView = (ImageView)findViewById(R.id.menu);
     localImageView.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramAnonymousView)
@@ -83,7 +83,7 @@ public class PlayGroundActivity
   
   private SeekBar setupRotationXSeekbar()
   {
-    SeekBar localSeekBar = (SeekBar)findViewById(2131492974);
+    SeekBar localSeekBar = (SeekBar)findViewById(R.id.rotation_x_seekbar);
     WindFragment.setProgressBarColor(localSeekBar, this.seekbarColor);
     localSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
     {
@@ -102,7 +102,7 @@ public class PlayGroundActivity
   
   private void setupRotationYSeekbar()
   {
-    SeekBar localSeekBar = (SeekBar)findViewById(2131492975);
+    SeekBar localSeekBar = (SeekBar)findViewById(R.id.rotation_y_seekbar);
     localSeekBar.setProgress((int)(0.5F * localSeekBar.getMax()));
     WindFragment.setProgressBarColor(localSeekBar, this.seekbarColor);
     localSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
@@ -120,7 +120,7 @@ public class PlayGroundActivity
   
   private void setupRotationZSeekbar()
   {
-    SeekBar localSeekBar = (SeekBar)findViewById(2131492976);
+    SeekBar localSeekBar = (SeekBar)findViewById(R.id.rotation_z_seekbar);
     localSeekBar.setProgress(0);
     WindFragment.setProgressBarColor(localSeekBar, this.seekbarColor);
     localSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
@@ -148,9 +148,9 @@ public class PlayGroundActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968607);
-    this.seekbarColor = getResources().getColor(2131427359);
-    this.depthView = ((DepthLayout)findViewById(2131492977));
+    setContentView(R.layout.fragment_playground);
+    this.seekbarColor = getResources().getColor(R.color.fab);
+    this.depthView = ((DepthLayout)findViewById(R.id.depth_view));
     this.depthView.setCameraDistance(6000.0F * getResources().getDisplayMetrics().density);
     setupSeekBars();
     makeAppFullscreen();

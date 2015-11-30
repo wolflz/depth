@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import no.agens.agtween.interpolators.QuintOut;
+import no.agens.depth.library.R;
 
 public class CircularSplashView
   extends View
@@ -48,7 +49,7 @@ public class CircularSplashView
     Rect localRect = new Rect(0, 0, getWidth(), getHeight());
     RectF localRectF2 = new RectF(-1.0F, -1.0F, 1 + getWidth(), 1 + getHeight());
     this.circles.add(new CircleColorExpand(localRectF1, 0L, 600L, this.splashColor));
-    this.circles.add(new CircleColorExpand(localRectF2, 70L, 600L, getResources().getColor(2131427410)));
+    this.circles.add(new CircleColorExpand(localRectF2, 70L, 600L, getResources().getColor(R.color.white)));
     this.circles.add(new CircleBitmapExpand(localRect, 130L, 800L, this.splash));
     Iterator localIterator = this.circles.iterator();
     while (localIterator.hasNext()) {
@@ -116,7 +117,7 @@ public class CircularSplashView
     
     public void draw(Canvas paramCanvas)
     {
-      if (this.drawingRect != null) {
+      if (this.drawingRect != null && this.bitmap != null) {
         paramCanvas.drawBitmap(this.bitmap, null, this.drawingRect, null);
       }
     }

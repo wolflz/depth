@@ -308,8 +308,8 @@ public class DepthRendrer
     });
     this.shadowPaint.setColor(-16777216);
     this.shadowPaint.setAntiAlias(true);
-    this.softShadow = ((NinePatchDrawable)getResources().getDrawable(2130837581, null));
-    this.roundSoftShadow = getResources().getDrawable(2130837580, null);
+    this.softShadow = ((NinePatchDrawable)getResources().getDrawable(R.drawable.shadow, null));
+    this.roundSoftShadow = getResources().getDrawable(R.drawable.round_soft_shadow, null);
   }
 }
 

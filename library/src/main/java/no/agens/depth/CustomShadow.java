@@ -40,9 +40,9 @@ public class CustomShadow
   
   public CustomShadow(Resources paramResources, int paramInt, float paramFloat1, float paramFloat2, float paramFloat3)
   {
-    this.mShadowStartColor = paramResources.getColor(2131427351);
-    this.mShadowEndColor = paramResources.getColor(2131427350);
-    this.mInsetShadow = paramResources.getDimensionPixelSize(2131165260);
+    this.mShadowStartColor = paramResources.getColor(R.color.cardview_shadow_start_color);
+    this.mShadowEndColor = paramResources.getColor(R.color.cardview_shadow_end_color);
+    this.mInsetShadow = paramResources.getDimensionPixelSize(R.dimen.cardview_compat_inset_shadow);
     this.mPaint = new Paint(5);
     this.mPaint.setColor(paramInt);
     this.mCornerShadowPaint = new Paint(5);

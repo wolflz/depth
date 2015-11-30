@@ -66,7 +66,7 @@ public class WindFragment
   
   private void hideShadow()
   {
-    this.root.findViewById(2131492971).setVisibility(8);
+    this.root.findViewById(R.id.actionbar_shadow).setVisibility(8);
   }
   
   public static void setProgressBarColor(SeekBar paramSeekBar, int paramInt)
@@ -88,7 +88,7 @@ public class WindFragment
   
   private void setupFabButton()
   {
-    this.root.findViewById(2131492988).setOnClickListener(new View.OnClickListener()
+    this.root.findViewById(R.id.fab).setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramAnonymousView)
       {
@@ -114,7 +114,7 @@ public class WindFragment
   
   private void setupMenuButton()
   {
-    ImageView localImageView = (ImageView)this.root.findViewById(2131492970);
+    ImageView localImageView = (ImageView)this.root.findViewById(R.id.menu);
     localImageView.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramAnonymousView)
@@ -133,10 +133,10 @@ public class WindFragment
   
   private void setupSliders()
   {
-    SeekBar localSeekBar1 = (SeekBar)this.root.findViewById(2131492989);
-    final SeekBar localSeekBar2 = (SeekBar)this.root.findViewById(2131492990);
-    setProgressBarColor(localSeekBar1, getResources().getColor(2131427360));
-    setProgressBarColor(localSeekBar2, getResources().getColor(2131427360));
+    SeekBar localSeekBar1 = (SeekBar)this.root.findViewById(R.id.wind_seekbar);
+    final SeekBar localSeekBar2 = (SeekBar)this.root.findViewById(R.id.flames_seekbar);
+    setProgressBarColor(localSeekBar1, getResources().getColor(R.color.fab2));
+    setProgressBarColor(localSeekBar2, getResources().getColor(R.color.fab2));
     localSeekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
     {
       public void onProgressChanged(SeekBar paramAnonymousSeekBar, int paramAnonymousInt, boolean paramAnonymousBoolean)
@@ -171,7 +171,7 @@ public class WindFragment
   
   private void showShadow()
   {
-    View localView = this.root.findViewById(2131492971);
+    View localView = this.root.findViewById(R.id.actionbar_shadow);
     localView.setVisibility(0);
     ObjectAnimator.ofFloat(localView, View.ALPHA, new float[] { 0.0F, 0.8F }).setDuration(400L).start();
   }
@@ -199,8 +199,8 @@ public class WindFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    this.root = paramLayoutInflater.inflate(2130968609, paramViewGroup, false);
-    this.bearsScene = ((BearSceneView)this.root.findViewById(2131492980));
+    this.root = paramLayoutInflater.inflate(R.layout.fragment_wind, paramViewGroup, false);
+    this.bearsScene = ((BearSceneView)this.root.findViewById(R.id.water_scene));
     doIntroAnimation();
     setupFabButton();
     setupMenuButton();

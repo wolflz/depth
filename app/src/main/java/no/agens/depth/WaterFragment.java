@@ -39,7 +39,7 @@ public class WaterFragment
   
   private void hideShadow()
   {
-    this.root.findViewById(2131492971).setVisibility(8);
+    this.root.findViewById(R.id.actionbar_shadow).setVisibility(8);
   }
   
   private void introAnimate()
@@ -66,7 +66,7 @@ public class WaterFragment
   
   private void setupFab()
   {
-    this.root.findViewById(2131492988).setOnClickListener(new View.OnClickListener()
+    this.root.findViewById(R.id.fab).setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramAnonymousView)
       {
@@ -92,7 +92,7 @@ public class WaterFragment
   
   private void setupMenuButton()
   {
-    ImageView localImageView = (ImageView)this.root.findViewById(2131492970);
+    ImageView localImageView = (ImageView)this.root.findViewById(R.id.menu);
     localImageView.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramAnonymousView)
@@ -111,10 +111,10 @@ public class WaterFragment
   
   private void setupSeekbars()
   {
-    SeekBar localSeekBar1 = (SeekBar)this.root.findViewById(2131492984);
-    SeekBar localSeekBar2 = (SeekBar)this.root.findViewById(2131492983);
-    WindFragment.setProgressBarColor(localSeekBar1, getResources().getColor(2131427359));
-    WindFragment.setProgressBarColor(localSeekBar2, getResources().getColor(2131427359));
+    SeekBar localSeekBar1 = (SeekBar)this.root.findViewById(R.id.wave_seekbar);
+    SeekBar localSeekBar2 = (SeekBar)this.root.findViewById(R.id.noise_seekbar);
+    WindFragment.setProgressBarColor(localSeekBar1, getResources().getColor(R.color.fab));
+    WindFragment.setProgressBarColor(localSeekBar2, getResources().getColor(R.color.fab));
     localSeekBar2.setProgress(50);
     localSeekBar1.setProgress(50);
     localSeekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
@@ -143,7 +143,7 @@ public class WaterFragment
   
   private void showShadow()
   {
-    View localView = this.root.findViewById(2131492971);
+    View localView = this.root.findViewById(R.id.actionbar_shadow);
     localView.setVisibility(0);
     ObjectAnimator.ofFloat(localView, View.ALPHA, new float[] { 0.0F, 0.8F }).setDuration(400L).start();
   }
@@ -171,8 +171,8 @@ public class WaterFragment
   
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    this.root = paramLayoutInflater.inflate(2130968608, paramViewGroup, false);
-    this.waterScene = ((WaterSceneView)this.root.findViewById(2131492980));
+    this.root = paramLayoutInflater.inflate(R.layout.fragment_water, paramViewGroup, false);
+    this.waterScene = ((WaterSceneView)this.root.findViewById(R.id.water_scene));
     setupFab();
     introAnimate();
     setupSeekbars();
