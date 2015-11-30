@@ -11,6 +11,7 @@ import android.graphics.Path.FillType;
 import android.graphics.RadialGradient;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
 import android.graphics.drawable.Drawable;
 
@@ -100,7 +101,6 @@ public class CustomShadow
       arrayOfInt2[2] = this.mShadowEndColor;
       localPaint2.setShader(new LinearGradient(0.0F, f3, 0.0F, f4, arrayOfInt2, new float[] { 0.0F, 0.5F, 1.0F }, Shader.TileMode.CLAMP));
       this.mEdgeShadowPaint.setAntiAlias(false);
-      return;
       this.mCornerShadowPath.reset();
     }
   }

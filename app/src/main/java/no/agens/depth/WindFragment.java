@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.res.Resources;
 import android.graphics.PorterDuff.Mode;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.StateListDrawable;

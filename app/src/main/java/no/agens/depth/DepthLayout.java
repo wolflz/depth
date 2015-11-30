@@ -71,9 +71,9 @@ public class DepthLayout
       {
         public void getOutline(View paramAnonymousView, Outline paramAnonymousOutline) {}
       });
-      return;
       this.edgePaint.setColor(-1);
       this.depth = (2.0F * getResources().getDisplayMetrics().density);
+      return;
     }
   }
   

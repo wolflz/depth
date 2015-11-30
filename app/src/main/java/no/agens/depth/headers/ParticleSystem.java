@@ -72,7 +72,7 @@ public class ParticleSystem
   public void setParticlePaintColor(Particle paramParticle)
   {
     float f = (this.y - paramParticle.y) / (this.y - this.minYCoord);
-    this.color.setCurrentPlayTime((10000.0F * f));
+    this.color.setCurrentPlayTime((long) (10000.0F * f));
     this.particlePaint.setColor(((Integer)this.color.getAnimatedValue()).intValue());
   }
   

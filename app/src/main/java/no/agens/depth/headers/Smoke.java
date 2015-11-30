@@ -72,18 +72,16 @@ public class Smoke
       if (j != 0)
       {
         this.smokePath.cubicTo(this.x, this.y - i * k, this.x + this.width, this.y - i * k - i / 2, this.x, this.y - i * k - i);
-        label109:
         if (j != 0) {
-          break label183;
+          return;
         }
       }
-      label183:
       for (j = 1;; j = 0)
       {
         k++;
         break;
         this.smokePath.cubicTo(this.x, this.y - i * k, this.x - this.width, this.y - i * k - i / 2, this.x, this.y - i * k - i);
-        break label109;
+        return;
       }
     }
   }

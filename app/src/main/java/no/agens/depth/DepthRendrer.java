@@ -104,7 +104,6 @@ public class DepthRendrer
         break;
       }
       drawLeftEdge(paramDepthLayout, paramCanvas, paramArrayOfFloat);
-      return;
       drawRightEdge(paramDepthLayout, paramCanvas, paramArrayOfFloat);
     }
     drawRightEdge(paramDepthLayout, paramCanvas, paramArrayOfFloat);
@@ -185,7 +184,6 @@ public class DepthRendrer
         break;
       }
       drawTopEdge(paramDepthLayout, paramCanvas, paramArrayOfFloat);
-      return;
       drawBottomEdge(paramDepthLayout, paramCanvas, paramArrayOfFloat);
     }
     drawBottomEdge(paramDepthLayout, paramCanvas, paramArrayOfFloat);
@@ -223,26 +221,21 @@ public class DepthRendrer
       arrayOfFloat[6] = 0.0F;
       arrayOfFloat[7] = localDepthLayout.getHeight();
       if (!localDepthLayout.isCircle()) {
-        break label154;
+          localDepthLayout.getCustomShadow().drawShadow(paramCanvas, localDepthLayout, this.softShadow);
+          if ((localDepthLayout.getRotationX() != 0.0F) || (localDepthLayout.getRotationY() != 0.0F)) {
+              if (getLongestHorizontalEdge(localDepthLayout) > getLongestVerticalEdge(localDepthLayout)) {
+                  drawVerticalFirst(localDepthLayout, paramCanvas, arrayOfFloat);
+              } else {
+                  drawHorizontalFist(localDepthLayout, paramCanvas, arrayOfFloat);
+              }
+          }
       }
       localDepthLayout.getCustomShadow().drawShadow(paramCanvas, localDepthLayout, this.roundSoftShadow);
       if ((Math.abs(localDepthLayout.getRotationX()) > 1.0F) || (Math.abs(localDepthLayout.getRotationY()) > 1.0F)) {
         drawCornerBaseShape(localDepthLayout, paramCanvas, arrayOfFloat);
       }
     }
-    for (;;)
-    {
-      return super.drawChild(paramCanvas, paramView, paramLong);
-      label154:
-      localDepthLayout.getCustomShadow().drawShadow(paramCanvas, localDepthLayout, this.softShadow);
-      if ((localDepthLayout.getRotationX() != 0.0F) || (localDepthLayout.getRotationY() != 0.0F)) {
-        if (getLongestHorizontalEdge(localDepthLayout) > getLongestVerticalEdge(localDepthLayout)) {
-          drawVerticalFirst(localDepthLayout, paramCanvas, arrayOfFloat);
-        } else {
-          drawHorizontalFist(localDepthLayout, paramCanvas, arrayOfFloat);
-        }
-      }
-    }
+    return super.drawChild(paramCanvas, paramView, paramLong);
   }
   
   void drawShadow(PointF paramPointF1, PointF paramPointF2, float paramFloat, Canvas paramCanvas, DepthLayout paramDepthLayout)

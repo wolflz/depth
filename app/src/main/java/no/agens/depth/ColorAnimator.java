@@ -47,6 +47,8 @@ public class ColorAnimator
   private static class ColorEvaluator
     implements TypeEvaluator<Integer>
   {
+      public ColorEvaluator(Integer i) {
+      }
     public Integer evaluate(float paramFloat, Integer paramInteger1, Integer paramInteger2)
     {
       int i = Color.alpha(paramInteger2.intValue());
