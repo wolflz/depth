@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<no.agens.depth.DepthRendrer android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/appbar" android:background="@color/green" android:layout_width="fill_parent" android:layout_height="@dimen/appbar_height" android:layerType="hardware" app:edge_color="@color/statusbar2">
+        <ImageView android:id="@id/staturbar_bg" android:background="@color/statusbar2" android:layout_width="fill_parent" android:layout_height="24.0dip" />
+        <ImageView android:id="@id/menu" android:layout_width="56.0dip" android:layout_height="56.0dip" android:src="@drawable/ic_menu" android:scaleType="centerInside" android:layout_alignParentBottom="true" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="65.0dip" android:layout_marginBottom="@dimen/activity_horizontal_margin" android:text="Depth" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/actionbar_shadow" android:background="@drawable/actionbar_shadow" android:layout_width="fill_parent" android:layout_height="5.0dip" android:layout_below="@id/appbar" />
+    <ScrollView android:id="@id/scrollView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="324.0dip">
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_subheading_margin_top" android:text="Depth" />
+            <SeekBar android:id="@id/depth_seekbar" android:padding="@dimen/seekbar_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/seekbar_margin_sides" android:layout_marginTop="@dimen/seekbar_margin_top" android:layout_marginRight="@dimen/seekbar_margin_sides" />
+            <View android:background="@color/divider_color" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_subheading_margin_top" android:text="Elevation" />
+            <SeekBar android:id="@id/elevation_seekbar" android:padding="@dimen/seekbar_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/seekbar_margin_sides" android:layout_marginTop="@dimen/seekbar_margin_top" android:layout_marginRight="@dimen/seekbar_margin_sides" />
+            <View android:background="@color/divider_color" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_subheading_margin_top" android:text="Rotation X" />
+            <SeekBar android:id="@id/rotation_x_seekbar" android:padding="@dimen/seekbar_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/seekbar_margin_sides" android:layout_marginTop="@dimen/seekbar_margin_top" android:layout_marginRight="@dimen/seekbar_margin_sides" />
+            <View android:background="@color/divider_color" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_subheading_margin_top" android:text="Rotation Y" />
+            <SeekBar android:id="@id/rotation_y_seekbar" android:padding="@dimen/seekbar_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/seekbar_margin_sides" android:layout_marginTop="@dimen/seekbar_margin_top" android:layout_marginRight="@dimen/seekbar_margin_sides" />
+            <View android:background="@color/divider_color" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_subheading_margin_top" android:text="Rotation Z" />
+            <SeekBar android:id="@id/rotation_z_seekbar" android:padding="@dimen/seekbar_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/seekbar_margin_sides" android:layout_marginTop="@dimen/seekbar_margin_top" android:layout_marginRight="@dimen/seekbar_margin_sides" />
+        </LinearLayout>
+    </ScrollView>
+    <no.agens.depth.DepthLayout android:id="@id/depth_view" android:layout_width="140.0dip" android:layout_height="140.0dip" android:layout_marginTop="130.0dip" android:layout_centerHorizontal="true" app:is_circle="false">
+        <ImageView android:background="@drawable/sun" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </no.agens.depth.DepthLayout>
+    <ImageView android:id="@id/imageView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="195.0dip" android:src="@drawable/x_y" />
+</no.agens.depth.DepthRendrer>

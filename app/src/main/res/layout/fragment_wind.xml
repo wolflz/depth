@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<no.agens.depth.DepthRendrer android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <no.agens.depth.DepthLayout android:id="@id/root_dl" android:background="@color/white" android:paddingTop="@dimen/appbar_height" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layerType="hardware">
+        <no.agens.depth.headers.BearSceneView android:id="@id/water_scene" android:background="@drawable/bear_bg_gradient" android:layout_width="fill_parent" android:layout_height="180.0dip" android:scaleType="centerCrop" />
+    </no.agens.depth.DepthLayout>
+    <no.agens.depth.DepthLayout android:id="@id/appbar" android:background="@color/green" android:layout_width="fill_parent" android:layout_height="@dimen/appbar_height" android:layerType="hardware" app:edge_color="@color/statusbar2">
+        <ImageView android:id="@id/staturbar_bg" android:background="@color/statusbar2" android:layout_width="fill_parent" android:layout_height="24.0dip" />
+        <ImageView android:id="@id/menu" android:layout_width="56.0dip" android:layout_height="56.0dip" android:src="@drawable/ic_menu" android:scaleType="centerInside" android:layout_alignParentBottom="true" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="65.0dip" android:layout_marginBottom="@dimen/activity_horizontal_margin" android:text="Depth" android:layout_alignParentBottom="true" />
+    </no.agens.depth.DepthLayout>
+    <ImageView android:id="@id/actionbar_shadow" android:background="@drawable/actionbar_shadow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/appbar" />
+    <no.agens.depth.DepthLayout android:id="@id/dl2" android:background="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="260.0dip" android:layerType="hardware" app:custom_elevation="1.0dip">
+        <LinearLayout android:orientation="vertical" android:id="@id/sliders_container" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="16.0sp" android:textColor="@color/black" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_subheading_margin_top" android:text="Wind Strength" />
+            <SeekBar android:id="@id/wind_seekbar" android:padding="@dimen/seekbar_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/seekbar_margin_sides" android:layout_marginTop="@dimen/seekbar_margin_top" android:layout_marginRight="@dimen/seekbar_margin_sides" />
+            <View android:background="@color/divider_color" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/black" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_subheading_margin_top" android:text="Flames Height" />
+            <SeekBar android:id="@id/flames_seekbar" android:padding="@dimen/seekbar_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/seekbar_margin_sides" android:layout_marginTop="@dimen/seekbar_margin_top" android:layout_marginRight="@dimen/seekbar_margin_sides" />
+        </LinearLayout>
+    </no.agens.depth.DepthLayout>
+    <no.agens.depth.DepthLayout android:id="@id/dl3" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="450.0dip" android:layerType="hardware" app:custom_elevation="2.0dip">
+        <TextView android:textSize="16.0sp" android:textColor="@color/black" android:id="@id/about_heading" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_subheading_margin_top" android:text="Two Bears" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/text_primary" android:paddingLeft="@dimen/activity_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="A particle experiment developed by Agens in 2015, as an example of how to draw advanced canvas based graphic´s with the Android SDK. " android:layout_below="@id/about_heading" />
+    </no.agens.depth.DepthLayout>
+    <no.agens.depth.DepthLayout android:id="@id/fab_container" android:background="@drawable/circle" android:layout_width="56.0dip" android:layout_height="56.0dip" android:layout_marginTop="232.0dip" android:layout_marginRight="@dimen/fab_margin" android:layout_alignParentRight="true" android:layerType="hardware" app:is_circle="true" app:edge_color="#ff9a6a70" app:custom_elevation="6.0dip">
+        <android.support.design.widget.FloatingActionButton android:id="@id/fab" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_forward" app:rippleColor="#ff9a6a70" app:backgroundTint="@color/fab2" />
+    </no.agens.depth.DepthLayout>
+</no.agens.depth.DepthRendrer>
